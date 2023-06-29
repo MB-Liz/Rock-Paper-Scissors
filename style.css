@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    border: 1px;
+    padding: 0;
+}
+
+body{
+    background: #5e4f7f;
+    font-size: 18px;
+}
+
+i{
+    font-size: 120px;
+    width: 120px;
+    height: 120px;
+}
+
+.game-container{
+    width: 90%;
+    margin: 4%;
+    padding: 3%;
+    background: #eaecf1;
+}
+
+/* HEADER */
+.header{
+
+}
+
+.header-text{
+
+}
+
+/* SCORES */
+
+.scores{
+    font-size: 80px;
+}
+
+.player-score{
+    
+}
+
+.computer-score{
+
+}
+
+/*   PLAYERS container   */
+
+/* BOTH */
+.choices{
+
+}
+
+.choice-container{
+    display: flex;
+    border: 5px solid;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.rock-contaner{
+
+}
+
+.paper-container{
+
+}
+
+.scissors-container{
+
+}
+
+.choice-container > i{
+
+}
+
+.final-choice{
+
+}
+
+.final-choice > i{
+    font-size: 300px;
+}
+
+/* PLAYER */
+.player-container{
+
+}
+
+.player-choices{
+
+}
+
+.player-final-choice{
+
+}
+
+/* COMPUTER */  
+.computer-container{
+
+}
+
+.computer-choices{
+
+}
+
+.computer-final-choice{
+
+}
+
+/*   Progress message   */
+.bottom-container{
+    font-size: 30px;
+}
+
+
+/* Message box */
+.winner-message-container{
+
+}
+
+.winner-message-text{
+
+}
