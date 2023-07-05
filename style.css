@@ -2,6 +2,7 @@
     margin: 0;
     border: 1px;
     padding: 0;
+    text-align: center;
 }
 
 body{
@@ -10,15 +11,14 @@ body{
 }
 
 i{
-    font-size: 120px;
-    width: 120px;
-    height: 120px;
+    font-size: 200px;
+    width: 200px;
+    height: 200px;
 }
 
-.game-container{
-    width: 90%;
-    margin: 4%;
-    padding: 3%;
+.main-container{
+    margin: 5%;
+    padding: 5%;
     background: #eaecf1;
 }
 
@@ -35,6 +35,9 @@ i{
 
 .scores{
     font-size: 80px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
 }
 
 .player-score{
@@ -45,14 +48,23 @@ i{
 
 }
 
-/*   PLAYERS container   */
+/*   GAME container   */
+
+.game-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
 /* BOTH */
 .choices{
-
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5%;
 }
 
-.choice-container{
+.choice-container, .final-choice{
     display: flex;
     border: 5px solid;
     border-radius: 50%;
@@ -79,16 +91,20 @@ i{
 }
 
 .final-choice{
-
+    position: absolute;
+    top: 25%;
+    padding: 30px;
 }
 
 .final-choice > i{
     font-size: 300px;
+    width: 300px;
+    height: 300px;
 }
 
 /* PLAYER */
 .player-container{
-
+    position: relative;
 }
 
 .player-choices{
@@ -96,12 +112,12 @@ i{
 }
 
 .player-final-choice{
-
+    left: 30%;
 }
 
 /* COMPUTER */  
 .computer-container{
-
+    position: relative;
 }
 
 .computer-choices{
@@ -109,20 +125,31 @@ i{
 }
 
 .computer-final-choice{
-
+    right: 30%;
 }
 
 /*   Progress message   */
 .bottom-container{
     font-size: 30px;
+    background: #d5dbe8;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+.bottom-container > div{
+    background: #a1b4cf;
+}
 
 /* Message box */
 .winner-message-container{
-
+    margin: 10% 15%;
+    padding: 5%;
+    border: 5px solid;
 }
 
 .winner-message-text{
-
+    padding: 20px;
+    font-size: 30px;
 }
