@@ -1,33 +1,30 @@
-const playerScore = document.querySelector(".player-score");
-const computerScore = document.querySelector(".computer-score");
-const roundText = document.querySelectorAll(".bottom-container");
+const playerScoreText = document.querySelector(".player-score");
+const computerScoreText = document.querySelector(".computer-score");
+const roundText = document.querySelector(".round-texts");
 const playerChoice = document.querySelectorAll(".player-choice");
 const computerChoice = document.querySelectorAll(".computer-choice");
+let playerSelection, computerSelection;
+let playerScore = 0, computerScore = 0;
 let choices = [
     "rock",
     "paper",
     "scissors"
 ];
-// [wins, loses]
+// [wins, loses, text]
 let winConditions = [
-    ["rock","scissors", "You WON by CRUSHING your enemy scissors with ROCK"],
-    ["paper", "rock", "You WON by BLINDING your enemy rock with PAPER"],
-    ["scissors", "paper", "You WON by CUTTING your enemy paper with SCISSORS"],
-    ["rock","paper", "You LOST BLINDED"],
-    ["paper", "scissors", "You LOST PIECES"],
-    ["scissors", "rock", "You LOST DESTROYED"]
+    ["rock","scissors", 1, "You WON by CRUSHING your enemy scissors with ROCK"],
+    ["paper", "rock", 1, "You WON by BLINDING your enemy rock with PAPER"],
+    ["scissors", "paper", 1, "You WON by CUTTING your enemy paper with SCISSORS"],
+    ["rock","paper", 0, "You LOST BLINDED"],
+    ["paper", "scissors", 0, "You LOST PIECES"],
+    ["scissors", "rock", 0, "You LOST DESTROYED"]
 ]
 
-console.log(choices);
-let playerSelection, computerSelection;
 
-console.log(playerScore.textContent);
-console.log(computerScore.textContent);
-console.log(roundText.textContent);
-computerSelection = getComputerChoice(computerSelection, ...choices);
-playerSelection = "rock";
-executeGame(playerSelection, computerSelection);
-
+playerSelection = "scissors";
+executeGameRound(playerSelection, computerSelection);
+game();
+console.log(playerScore, computerScore);
 //roundText.forEach (element) => element.addEventListener("click", )
 
 function getComputerChoice(computerSelection, ...choices){
@@ -36,13 +33,42 @@ function getComputerChoice(computerSelection, ...choices){
     console.log(computerSelection);
     return computerSelection;
 }
-function executeGame(playerSelection, computerSelection){
-    for (winCondition of winConditions){
-        if (playerSelection == winCondition[0] && computerSelection == winCondition[1]){
-            console.log(winCondition[2]);
-        }
-        else if(playerSelection == computerSelection){
-            console.log("tie");
-        }
+function executeGameRound(playerSelection, computerSelection){
+    if(playerSelection == computerSelection){
+        console.log("tie");
+        const boxText = document.createElement("div");
+        boxText.innerHTML = 'tie';
+        boxText.classList.add("boxText");
+        
+        roundText.appendChild(boxText);
+    }
+    else{
+        for (winCondition of winConditions){
+            if (playerSelection == winCondition[0] && computerSelection == winCondition[1]){
+                console.log(winCondition[3]);
+                const boxText = document.createElement("div");
+                boxText.innerHTML = winCondition[3];
+                boxText.classList.add("boxText");
+                roundText.appendChild(boxText);
+                if (winCondition[2] == 1){
+                    playerScore += 1;
+                }
+                else{
+                    computerScore += 1;
+                }
+            }
+            }
+    }
+}
+function game(){
+    while (playerScore < 5 && computerScore < 5){
+        computerSelection = getComputerChoice(computerSelection, ...choices);
+        executeGameRound(playerSelection, computerSelection);
+    }
+    if (playerScore == 3){
+        console.log("YOU WON DEFEATED EWMY");
+    }
+    else if (computerScore == 3){
+        console.log("DEFEATED");
     }
 }
