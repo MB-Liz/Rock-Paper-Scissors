@@ -11,14 +11,14 @@ body{
 }
 
 i{
-    font-size: 200px;
-    width: 200px;
-    height: 200px;
+    font-size: 180px;
+    width: 180px;
+    height: 180px;
 }
 
 .main-container{
-    margin: 5%;
-    padding: 5%;
+    margin: 0.5% 2%;
+    padding: 2% 8%;
     background: #eaecf1;
 }
 
@@ -28,7 +28,7 @@ i{
 }
 
 .header-text{
-
+    font-size: 22px;
 }
 
 /* SCORES */
@@ -36,8 +36,9 @@ i{
 .scores{
     font-size: 80px;
     display: flex;
-    gap: 50px;
+    gap: 60px;
     justify-content: space-evenly;
+    padding: 30px 10px 0px 10px;
 }
 
 .player-score{
@@ -54,6 +55,7 @@ i{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 10 20px;
 }
 
 /* BOTH */
@@ -62,6 +64,8 @@ i{
     flex-direction: column;
     gap: 15px;
     padding: 5%;
+    width: 240px;
+    align-items: center;
 }
 
 .choice-container, .final-choice{
@@ -97,14 +101,18 @@ i{
 }
 
 .final-choice > i{
-    font-size: 300px;
-    width: 300px;
-    height: 300px;
+    font-size: 250px;
+    width: 250px;
+    height: 250px;
 }
 
 /* PLAYER */
 .player-container{
     position: relative;
+    padding: 5px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .player-choices{
@@ -112,12 +120,16 @@ i{
 }
 
 .player-final-choice{
-    left: 30%;
+    left: 120%;
 }
 
 /* COMPUTER */  
 .computer-container{
     position: relative;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .computer-choices{
@@ -125,7 +137,7 @@ i{
 }
 
 .computer-final-choice{
-    right: 30%;
+    right: 110%;
 }
 
 /*   Progress message   */

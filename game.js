@@ -3,6 +3,8 @@ const computerScoreText = document.querySelector(".computer-score");
 const roundText = document.querySelector(".round-texts");
 const playerChoice = document.querySelectorAll(".player-choice");
 const computerChoice = document.querySelectorAll(".computer-choice");
+const playerFinalChoice = document.querySelectorAll(".player-final-choice");
+const computerFinalChoice = document.querySelectorAll(".computer-final-choice");
 let playerSelection, computerSelection;
 let playerScore = 0, computerScore = 0;
 let choices = [
@@ -19,6 +21,12 @@ let winConditions = [
     ["paper", "scissors", 0, "You LOST PIECES"],
     ["scissors", "rock", 0, "You LOST DESTROYED"]
 ]
+playerFinalChoice[0].style.visibility = "hidden";
+playerFinalChoice[1].style.visibility = "hidden";
+playerFinalChoice[2].style.visibility = "hidden";
+computerFinalChoice[0].style.visibility = "hidden";
+computerFinalChoice[1].style.visibility = "hidden";
+computerFinalChoice[2].style.visibility = "hidden";
 let running = false;
 
 initializeGame();
@@ -39,6 +47,14 @@ function getComputerChoice(computerSelection, ...choices){
     if (running){
         let index = Math.floor(Math.random()* 3);
         computerSelection = choices[index];
+        for (let i = 0; i < 3; i++){
+            if (i == index){
+                computerFinalChoice[i].style.visibility = "visible";
+            }
+            else{
+                computerFinalChoice[i].style.visibility = "hidden";
+            }
+        }
         console.log(computerSelection + "computer");
         return computerSelection;
     }
@@ -50,15 +66,23 @@ function getPlayerChoice(choice, playerSelection, ...choices){
             case playerChoice[0]:
                 console.log("rock click");
                 playerSelection = "rock";
-                
+                playerFinalChoice[0].style.visibility = "visible";
+                playerFinalChoice[1].style.visibility = "hidden";
+                playerFinalChoice[2].style.visibility = "hidden";
                 break;
             case playerChoice[1]:
                 console.log("paper click");
                 playerSelection = "paper";
+                playerFinalChoice[0].style.visibility = "hidden";
+                playerFinalChoice[1].style.visibility = "visible";
+                playerFinalChoice[2].style.visibility = "hidden";
                 break;
             case playerChoice[2]:
                 console.log("scissors click");
                 playerSelection = "scissors";
+                playerFinalChoice[0].style.visibility = "hidden";
+                playerFinalChoice[1].style.visibility = "hidden";
+                playerFinalChoice[2].style.visibility = "visible";
                 break;
             default:
                 console.log("error");
