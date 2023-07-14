@@ -20,18 +20,39 @@ let winConditions = [
     ["scissors", "rock", 0, "You LOST DESTROYED"]
 ]
 
+playerChoice.forEach (choice => choice.addEventListener ("click", () => {
+    playerSelection = getPlayerChoice(choice, playerSelection, ...choices);
+    computerSelection = getComputerChoice(computerSelection, ...choices);
+    executeGameRound(playerSelection, computerSelection);
+}));
 
-playerSelection = "scissors";
-executeGameRound(playerSelection, computerSelection);
-game();
-console.log(playerScore, computerScore);
 //roundText.forEach (element) => element.addEventListener("click", )
 
 function getComputerChoice(computerSelection, ...choices){
     let index = Math.floor(Math.random()* 3);
     computerSelection = choices[index];
-    console.log(computerSelection);
+    console.log(computerSelection + "computer");
     return computerSelection;
+}
+function getPlayerChoice(choice, playerSelection, ...choices){
+    console.log("click element");
+    switch (choice){
+        case playerChoice[0]:
+            console.log("rock click");
+            playerSelection = "rock";
+            break;
+        case playerChoice[1]:
+            console.log("paper click");
+            playerSelection = "paper";
+            break;
+        case playerChoice[2]:
+            console.log("scissors click");
+            playerSelection = "scissors";
+            break;
+        default:
+            console.log("error");
+    }
+    return playerSelection;
 }
 function executeGameRound(playerSelection, computerSelection){
     if(playerSelection == computerSelection){
@@ -52,23 +73,29 @@ function executeGameRound(playerSelection, computerSelection){
                 roundText.appendChild(boxText);
                 if (winCondition[2] == 1){
                     playerScore += 1;
+                    scoreUpdate();
                 }
                 else{
                     computerScore += 1;
+                    scoreUpdate();
                 }
             }
             }
     }
+}
+function scoreUpdate(){
+    playerScoreText.textContent = playerScore;
+    computerScoreText.textContent = computerScore;
 }
 function game(){
     while (playerScore < 5 && computerScore < 5){
         computerSelection = getComputerChoice(computerSelection, ...choices);
         executeGameRound(playerSelection, computerSelection);
     }
-    if (playerScore == 3){
+    if (playerScore == 5){
         console.log("YOU WON DEFEATED EWMY");
     }
-    else if (computerScore == 3){
+    else if (computerScore == 5){
         console.log("DEFEATED");
     }
 }
