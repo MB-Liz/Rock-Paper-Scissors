@@ -11,9 +11,9 @@ body{
 }
 
 i{
-    font-size: 180px;
-    width: 180px;
-    height: 180px;
+    font-size: 120px;
+    width: 120px;
+    height: 120px;
 }
 
 .main-container{
@@ -23,9 +23,6 @@ i{
 }
 
 /* HEADER */
-.header{
-
-}
 
 .header-text{
     font-size: 22px;
@@ -41,14 +38,6 @@ i{
     padding: 30px 10px 0px 10px;
 }
 
-.player-score{
-    
-}
-
-.computer-score{
-
-}
-
 /*   GAME container   */
 
 .game-container{
@@ -56,6 +45,7 @@ i{
     display: flex;
     justify-content: space-between;
     padding: 10 20px;
+    background: #d7e0f0;
 }
 
 /* BOTH */
@@ -78,22 +68,6 @@ i{
     justify-content: center;
 }
 
-.rock-contaner{
-
-}
-
-.paper-container{
-
-}
-
-.scissors-container{
-
-}
-
-.choice-container > i{
-
-}
-
 .final-choice{
     position: absolute;
     top: 25%;
@@ -101,9 +75,9 @@ i{
 }
 
 .final-choice > i{
-    font-size: 250px;
-    width: 250px;
-    height: 250px;
+    font-size: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 /* PLAYER */
@@ -113,10 +87,6 @@ i{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.player-choices{
-
 }
 
 .player-final-choice{
@@ -130,10 +100,6 @@ i{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.computer-choices{
-
 }
 
 .computer-final-choice{
