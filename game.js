@@ -14,12 +14,12 @@ let choices = [
 ];
 // [wins, loses, text]
 let winConditions = [
-    ["rock","scissors", 1, "You WON by CRUSHING your enemy scissors with ROCK"],
-    ["paper", "rock", 1, "You WON by BLINDING your enemy rock with PAPER"],
-    ["scissors", "paper", 1, "You WON by CUTTING your enemy paper with SCISSORS"],
-    ["rock","paper", 0, "You LOST BLINDED"],
-    ["paper", "scissors", 0, "You LOST PIECES"],
-    ["scissors", "rock", 0, "You LOST DESTROYED"]
+    ["rock","scissors", 1, "You WON: ROCK :: SCISSORS"],
+    ["paper", "rock", 1, "You WON: PAPER :: ROCK"],
+    ["scissors", "paper", 1, "You WON: SCISSORS :: PAPER"],
+    ["rock","paper", 0, "You LOST: ROCK :: PAPER"],
+    ["paper", "scissors", 0, "You LOST: PAPER :: SCISSORS"],
+    ["scissors", "rock", 0, "You LOST: SCISSORS :: ROCK"]
 ]
 playerFinalChoice[0].style.visibility = "hidden";
 playerFinalChoice[1].style.visibility = "hidden";
@@ -93,9 +93,9 @@ function getPlayerChoice(choice, playerSelection, ...choices){
 function executeGameRound(playerSelection, computerSelection){
     if (running){
         if(playerSelection == computerSelection){
-            console.log("tie");
+            console.log("TIE");
             const boxText = document.createElement("div");
-            boxText.innerHTML = 'tie';
+            boxText.innerHTML = 'TIE';
             boxText.classList.add("boxText");
         
             roundText.appendChild(boxText);
@@ -107,15 +107,18 @@ function executeGameRound(playerSelection, computerSelection){
                     const boxText = document.createElement("div");
                     boxText.innerHTML = winCondition[3];
                     boxText.classList.add("boxText");
-                    roundText.appendChild(boxText);
+                    
                     if (winCondition[2] == 1){
                         playerScore += 1;
+                        boxText.style.backgroundColor = "#c6f090";
                         scoreUpdate();
                     }
                     else{
                         computerScore += 1;
+                        boxText.style.backgroundColor = "#fc7f78";
                         scoreUpdate();
                     }
+                    roundText.appendChild(boxText);
                 }
                 }
         }
