@@ -12,7 +12,7 @@
         <div class="header">
             <div class="header-text">
                 <h2>It is time to win back the Amulet of Power </h2>
-                <h2>Win 5 rounds of Rock, Paper, Scissors to defeat the enemy</h2>
+                <h2>Win 5 times a game of Rock, Paper, Scissors to defeat the Applejack</h2>
             </div>
         </div>
         <div class="scores">
@@ -21,15 +21,6 @@
         </div>
         <div class="game-container">
             <div class="player-container">
-                <div class="final-choice player-final-choice">
-                    <i class="fa-regular fa-hand-back-fist"></i>
-                </div>
-                <div class="final-choice player-final-choice">
-                    <i class="fa-regular fa-hand"></i>
-                </div>
-                <div class="final-choice player-final-choice">
-                    <i class="fa-regular fa-hand-scissors"></i>
-                </div>
                 <div class="choices player-choice-container">
                     <div class="choice-container player-choice">
                         <i class="fa-regular fa-hand-back-fist"></i>
@@ -42,7 +33,18 @@
                     </div>
                 </div>
             </div>
-            <div class="computer-container">
+            <div class="final-choice-container">
+                <div class="final-choice player-final-choice">
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </div>
+                <div class="final-choice player-final-choice">
+                    <i class="fa-regular fa-hand"></i>
+                </div>
+                <div class="final-choice player-final-choice">
+                    <i class="fa-regular fa-hand-scissors"></i>
+                </div>
+            </div>
+            <div class="final-choice-container">
                 <div class="final-choice computer-final-choice">
                     <i class="fa-regular fa-hand-back-fist"></i>
                 </div>
@@ -52,6 +54,8 @@
                 <div class="final-choice computer-final-choice">
                     <i class="fa-regular fa-hand-scissors"></i>
                 </div>
+            </div>
+            <div class="computer-container">
                 <div class="choices computer-choice-container">
                     <div class="choice-container computer-choice">
                         <i class="fa-regular fa-hand-back-fist"></i>
@@ -68,12 +72,20 @@
         <div class="bottom-container round-texts">
         </div>
     </div>
-    <div class="winner-message-container">
+    <div class="message-container">
         <div class="skull-container">
-        <i class="fa-solid fa-skull-crossbones"></i>
+            <i class="fa-solid fa-skull-crossbones"></i>
         </div>
         <div class="winner-message-text">
             <h3>You lost, now the universe is destroyed</h3>
+        </div>
+    </div>
+    <div class="message-container">
+        <div class="skull-container">
+            <i class="fa-solid fa-gem"></i>
+        </div>
+        <div class="winner-message-text">
+            <h3>You won and have gained the Amulet of Power</h3>
         </div>
     </div>
     <script src="game.js"></script>
