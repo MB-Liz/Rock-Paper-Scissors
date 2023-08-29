@@ -1,3 +1,5 @@
+const mainContainer = document.querySelector(".main-container");
+const messageContainer = document.querySelectorAll(".message-container");
 const playerScoreText = document.querySelector(".player-score");
 const computerScoreText = document.querySelector(".computer-score");
 const roundText = document.querySelector(".round-texts");
@@ -21,12 +23,16 @@ let winConditions = [
     ["paper", "scissors", 0, "You LOST: PAPER :: SCISSORS"],
     ["scissors", "rock", 0, "You LOST: SCISSORS :: ROCK"]
 ]
+mainContainer.style.visibility = "visible";
+messageContainer[0].style.visibility = "hidden";
+messageContainer[1].style.visibility = "hidden";
 playerFinalChoice[0].style.visibility = "hidden";
 playerFinalChoice[1].style.visibility = "hidden";
 playerFinalChoice[2].style.visibility = "hidden";
 computerFinalChoice[0].style.visibility = "hidden";
 computerFinalChoice[1].style.visibility = "hidden";
 computerFinalChoice[2].style.visibility = "hidden";
+
 let running = false;
 
 initializeGame();
@@ -134,10 +140,24 @@ function game(){
             running = true;
         }
         else if (playerScore == 5){
+            //messageContainer.textContent = "You won and have gained the Amulet of Power";
+            messageContainer[1].style.visibility = "visible";
+            mainContainer.style.visibility = "hidden";
+            for(let i = 0; i < 3; i++){
+                playerFinalChoice[i].style.visibility = "hidden";
+                computerFinalChoice[i].style.visibility = "hidden";
+            }
             running = false;
-            console.log("Final YOU WON DEFEATED EWMY");
+            console.log("Final YOU WON DEFEATED EnemY");
         }
         else if (computerScore == 5){
+            //messageContainer.textContent = "You lost, now the universe is destroyed";
+            messageContainer[0].style.visibility = "visible";
+            mainContainer.style.visibility = "hidden";
+            for(let i = 0; i < 3; i++){
+                playerFinalChoice[i].style.visibility = "hidden";
+                computerFinalChoice[i].style.visibility = "hidden";
+            }
             running = false;
             console.log("Final DEFEATED");
         }

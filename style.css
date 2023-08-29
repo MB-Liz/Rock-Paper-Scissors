@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #5e4f7f;
+    background: #dfd3c3;
     font-size: 18px;
 }
 
@@ -19,7 +19,7 @@ i{
 .main-container{
     margin: 0.5% 2%;
     padding: 2% 8%;
-    background: #eaecf1;
+    background: #f0ece2;
 }
 
 /* HEADER */
@@ -47,7 +47,7 @@ i{
     justify-content: center;
     padding: 10 20px;
     margin: 0 auto;
-    background: #e2e9f5;
+    background: #c7b198;
 }
 
 /* BOTH */
@@ -101,10 +101,6 @@ i{
     justify-content: center;
 }
 
-.player-final-choice{
-
-}
-
 /* COMPUTER */  
 .computer-container{
     position: relative;
@@ -114,13 +110,10 @@ i{
     justify-content: center;
 }
 
-.computer-final-choice{
-}
-
 /*   Progress message   */
 .bottom-container{
     font-size: 30px;
-    background: #eeeff3;
+    background: #f0ece2;
     padding: 5%;
     display: flex;
     flex-direction: column;
@@ -129,19 +122,23 @@ i{
 
 .bottom-container > div{
     margin: 0 auto;
-    background: #f6edc7;
+    background: #f0ece2;
     max-width: fit-content;
     padding: 6px 16px;
 }
 
 /* Message box */
-.winner-message-container{
-    margin: 10% 15%;
+.message-container{
+    background: #c7b198;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 5%;
     border: 5px solid;
 }
 
-.winner-message-text{
+.message-text{
     padding: 20px;
     font-size: 30px;
 }
