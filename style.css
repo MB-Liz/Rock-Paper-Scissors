@@ -6,6 +6,8 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
     background: #dfd3c3;
     font-size: 18px;
 }
@@ -17,9 +19,13 @@ i{
 }
 
 .main-container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
     margin: 0.5% 2%;
     padding: 2% 8%;
     background: #f0ece2;
+    align-self: center;
 }
 
 /* HEADER */
@@ -36,6 +42,13 @@ i{
     gap: 60px;
     justify-content: space-evenly;
     padding: 30px 10px 0px 10px;
+}
+
+.user{
+    font-size: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 20px 20px;
 }
 
 /*   GAME container   */
@@ -145,10 +158,14 @@ i{
 
 
 .footer{
+    width: 100%;
     background: #596e79;
     color: #F4F1DE;
     display: flex;
+    position: fixed;
+    bottom: 0;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-size: 24px;
 }
