@@ -142,3 +142,13 @@ i{
     padding: 20px;
     font-size: 30px;
 }
+
+
+.footer{
+    background: #596e79;
+    color: #F4F1DE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
